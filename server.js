@@ -1,4 +1,5 @@
 const jsonServer = require('json-server')
+const http = require("http");
 const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
@@ -10,3 +11,8 @@ server.use(router)
 server.listen(port, () => {
   console.log('JSON Server is running')
 })
+
+setInterval(function () {
+  http.get("https://minikin-json-server.herokuapp.com");
+  console.log('PING THE SERVER');
+}, 300000);
