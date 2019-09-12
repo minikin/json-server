@@ -13,6 +13,5 @@ server.listen(port, () => {
 })
 
 setInterval(function () {
-  http.get("https://minikin-json-server.herokuapp.com");
-  console.log('PING THE SERVER');
+  http.get('http://minikin-json-server.herokuapp.com');
 }, 300000);
